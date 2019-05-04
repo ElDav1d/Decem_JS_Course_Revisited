@@ -21,6 +21,12 @@ function nonSuitablePeople(peopleAges) {
 const createCompany = function() {
   const myCompanyName = prompt('Nombre de la empresa')
   const myCompanyVacants = parseInt(prompt('¿Cuántas vacantes hay en la empresa?'))
+
+  if (myCompanyVacants === 0) {
+    alert('Vaya...la cosa está mal, ¿no?')
+    return
+  }
+  
   const myCompanyMaxAge = prompt('Edad máxima de los empleados')
   const myCompanyObject = myCompanyName.toLowerCase()
   window[myCompanyObject] = new Company(myCompanyVacants, myCompanyMaxAge)
