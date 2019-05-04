@@ -3,7 +3,8 @@ function Person(name, age) {
   this.age = age
 }
 
-function Company(maxAge) {
+function Company(vacants, maxAge) {
+  this.vacants = vacants
   this.maxAge = maxAge
   this.nonSuitablePeople = nonSuitablePeople
 }
@@ -19,8 +20,9 @@ function nonSuitablePeople(peopleAges) {
 }
 const createCompany = function() {
   const myCompanyName = prompt('Nombre de la empresa')
+  const myCompanyVacants = parseInt(prompt('¿Cuántas vacantes hay en la empresa?'))
   const myCompanyMaxAge = prompt('Edad máxima de los empleados')
   const myCompanyObject = myCompanyName.toLowerCase()
-  window[myCompanyObject] = new Company(myCompanyMaxAge)
+  window[myCompanyObject] = new Company(myCompanyVacants, myCompanyMaxAge)
   return myCompanyObject
 }
