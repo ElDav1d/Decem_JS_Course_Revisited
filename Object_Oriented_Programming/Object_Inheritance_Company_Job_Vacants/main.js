@@ -17,3 +17,10 @@ function nonSuitablePeople(peopleAges) {
   }
   alert(`Cantidad de no aptos para la empresa: ${counter}`)
 }
+const createCompany = function() {
+  const myCompanyName = prompt('Nombre de la empresa')
+  const myCompanyMaxAge = prompt('Edad máxima de los empleados')
+  const myCompanyObject = myCompanyName.toLowerCase()
+  window[myCompanyObject] = new Company(myCompanyMaxAge)
+  return myCompanyObject
+}
