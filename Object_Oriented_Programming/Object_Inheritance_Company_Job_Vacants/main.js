@@ -20,8 +20,9 @@ function nonSuitablePeople(peopleAges) {
 }
 const createCompany = function() {
   let myCompanyName
+  let myCompanyMaxAge = 0
   const valueIsSet = (value) => value && value !== ''
-  
+
   while (!valueIsSet(myCompanyName)) {
     myCompanyName = prompt('Nombre de la empresa').toString()
   }
@@ -31,10 +32,10 @@ const createCompany = function() {
   if (myCompanyVacants === 0) {
     alert('Vaya...la cosa está mal, ¿no?')
     return
+  } else {
+    myCompanyMaxAge = parseInt(prompt('Edad máxima de los empleados'))
   }
-  
-  const myCompanyMaxAge = prompt('Edad máxima de los empleados')
-  const myCompanyObject = myCompanyName.toLowerCase()
-  window[myCompanyObject] = new Company(myCompanyVacants, myCompanyMaxAge)
-  return myCompanyObject
+
+  myCompany = myCompanyName.toLowerCase()
+  window[myCompany] = new Company(myCompanyVacants, myCompanyMaxAge)
 }
