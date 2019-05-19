@@ -19,7 +19,13 @@ function nonSuitablePeople(peopleAges) {
   alert(`Cantidad de no aptos para la empresa: ${counter}`)
 }
 const createCompany = function() {
-  const myCompanyName = prompt('Nombre de la empresa')
+  let myCompanyName
+  const valueIsSet = (value) => value && value !== ''
+  
+  while (!valueIsSet(myCompanyName)) {
+    myCompanyName = prompt('Nombre de la empresa').toString()
+  }
+  
   const myCompanyVacants = parseInt(prompt('¿Cuántas vacantes hay en la empresa?'))
 
   if (myCompanyVacants === 0) {
