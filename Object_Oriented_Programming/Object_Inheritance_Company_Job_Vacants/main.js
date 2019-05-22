@@ -38,4 +38,13 @@ const createCompany = function() {
 
   myCompany = myCompanyName.toLowerCase()
   window[myCompany] = new Company(myCompanyVacants, myCompanyMaxAge)
+}const createApplicants = function(company) {
+  let applicants = company.vacants
+
+  while (applicants > 0) {
+    let name = prompt('Nombre')
+    let age = prompt('Edad')
+    window[name.toLowerCase()] = new Person(name, age)
+    applicants--
+  }
 }
